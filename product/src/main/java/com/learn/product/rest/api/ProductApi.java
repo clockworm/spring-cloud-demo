@@ -13,7 +13,7 @@ import com.learn.product.util.ResultDTOUtil;
 
 @RestController
 @RequestMapping("product")
-public class ProductController {
+public class ProductApi {
 
 	@Autowired
 	private ProductInfoDao productInfoDao;
