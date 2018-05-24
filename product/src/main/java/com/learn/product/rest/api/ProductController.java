@@ -1,4 +1,4 @@
-package com.learn.product.web.controller;
+package com.learn.product.rest.api;
 
 import java.util.List;
 
