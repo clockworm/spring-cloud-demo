@@ -1,4 +1,4 @@
-package com.learn.product.base;
+package com.learn.product.dto;
 
 import java.io.Serializable;
 

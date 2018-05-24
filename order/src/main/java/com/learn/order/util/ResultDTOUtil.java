@@ -1,7 +1,7 @@
-package com.learn.product.util;
+package com.learn.order.util;
 
-import com.learn.product.dto.ResultDTO;
-import com.learn.product.enums.ResultEnum;
+import com.learn.order.dto.ResultDTO;
+import com.learn.order.enums.ResultEnum;
 
 /**
  * @author TangLingYun
