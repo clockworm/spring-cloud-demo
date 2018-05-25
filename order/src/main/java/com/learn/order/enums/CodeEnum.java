@@ -1,5 +1,7 @@
 package com.learn.order.enums;
 
-public interface CodeEnum {
+import java.io.Serializable;
+
+public interface CodeEnum extends Serializable{
     Integer getCode();
 }

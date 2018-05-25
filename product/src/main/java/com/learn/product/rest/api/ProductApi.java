@@ -13,11 +13,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.learn.product.dto.CartDTO;
 import com.learn.product.dto.ProductDTO;
 import com.learn.product.dto.ProductInfoDTO;
 import com.learn.product.dto.ResultDTO;
 import com.learn.product.entity.ProductCategory;
 import com.learn.product.entity.ProductInfo;
+import com.learn.product.enums.ResultEnum;
 import com.learn.product.rest.form.ProductForm;
 import com.learn.product.service.ProductCategoryService;
 import com.learn.product.service.ProductService;
@@ -65,4 +67,10 @@ public class ProductApi {
 		return ResultDTOUtil.success(list);
 	}
 
+	@PostMapping("decreaseStock")
+	public ResultDTO<?> decreaseStock(@RequestBody List<CartDTO> cartDTOS){
+		ResultEnum resultEnum = productService.decreaseStock(cartDTOS);
+		if(resultEnum.equals(ResultEnum.SUCCESS)) return ResultDTOUtil.success(resultEnum);
+		return ResultDTOUtil.error(resultEnum);
+	}
 }
