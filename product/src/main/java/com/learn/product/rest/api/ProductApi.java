@@ -3,12 +3,16 @@ package com.learn.product.rest.api;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
 import javax.validation.Valid;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
 import com.learn.product.dto.ProductDTO;
 import com.learn.product.dto.ProductInfoDTO;
 import com.learn.product.dto.ResultDTO;
@@ -20,7 +24,6 @@ import com.learn.product.service.ProductService;
 import com.learn.product.util.ResultDTOUtil;
 
 @RestController
-@RequestMapping("product")
 public class ProductApi {
 
 	@Autowired
@@ -53,8 +56,8 @@ public class ProductApi {
 		return ResultDTOUtil.success(list);
 	}
 
-	@GetMapping("listForOrder")
-	public ResultDTO<?> listForOrder(List<String> productIds) {
+	@PostMapping("listForOrder")
+	public ResultDTO<?> listForOrder(@RequestBody List<String> productIds) {
 		List<ProductInfo> list = productService.findProductInfoByProductIdIn(productIds);
 		return ResultDTOUtil.success(list);
 	}
