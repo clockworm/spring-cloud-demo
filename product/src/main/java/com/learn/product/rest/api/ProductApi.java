@@ -25,6 +25,8 @@ import com.learn.product.util.ResultDTOUtil;
 
 @RestController
 public class ProductApi {
+	
+	private static String server = "product2:服務調用";
 
 	@Autowired
 	private ProductService productService;
@@ -59,6 +61,7 @@ public class ProductApi {
 	@PostMapping("listForOrder")
 	public ResultDTO<?> listForOrder(@RequestBody List<String> productIds) {
 		List<ProductInfo> list = productService.findProductInfoByProductIdIn(productIds);
+		System.err.println(server);
 		return ResultDTOUtil.success(list);
 	}
 
