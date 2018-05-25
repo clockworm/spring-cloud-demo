@@ -1,7 +1,5 @@
 package com.learn.product.enums;
 
-import java.io.Serializable;
-
-public interface CodeEnum extends Serializable{
+public interface CodeEnum{
     Integer getCode();
 }

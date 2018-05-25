@@ -1,12 +1,11 @@
 package com.learn.order.dto;
 
-import java.io.Serializable;
-
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
-public class CartDTO implements Serializable{
-	private static final long serialVersionUID = 1L;
+@NoArgsConstructor
+public class CartDTO{
 	/** 商品ID */
 	private String productId;
 	/** 數量 */

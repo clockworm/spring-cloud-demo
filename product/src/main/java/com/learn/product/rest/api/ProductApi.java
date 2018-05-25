@@ -25,10 +25,13 @@ import com.learn.product.service.ProductCategoryService;
 import com.learn.product.service.ProductService;
 import com.learn.product.util.ResultDTOUtil;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
+@Slf4j
 public class ProductApi {
 	
-	private static String server = "product2:服務調用";
+//	private static String server = "product2:服務調用";
 
 	@Autowired
 	private ProductService productService;
@@ -62,14 +65,18 @@ public class ProductApi {
 
 	@PostMapping("listForOrder")
 	public ResultDTO<?> listForOrder(@RequestBody List<String> productIds) {
+		log.info("创建订单【商品服务接口】入参,productIds={}",productIds);
 		List<ProductInfo> list = productService.findProductInfoByProductIdIn(productIds);
-		System.err.println(server);
+		log.info("创建订单【商品服务接口】出参,list={}",list);
+//		System.err.println(server);
 		return ResultDTOUtil.success(list);
 	}
 
 	@PostMapping("decreaseStock")
 	public ResultDTO<?> decreaseStock(@RequestBody List<CartDTO> cartDTOS){
+		log.info("扣减库存【商品服务接口】入参,cartDTOS={}",cartDTOS);
 		ResultEnum resultEnum = productService.decreaseStock(cartDTOS);
+		log.info("扣减库存【商品服务接口】出参,resultEnum={}",resultEnum);
 		if(resultEnum.equals(ResultEnum.SUCCESS)) return ResultDTOUtil.success(resultEnum);
 		return ResultDTOUtil.error(resultEnum);
 	}
