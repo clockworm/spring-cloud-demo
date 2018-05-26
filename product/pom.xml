@@ -13,9 +13,9 @@
 	<description>Demo project for Spring Boot</description>
 
 	<modules>
-		<module>api</module>
-		<module>server</module>
-		<module>common</module>
+		<module>product-api</module>
+		<module>product-server</module>
+		<module>product-common</module>
 	</modules>
 
 	<parent>
