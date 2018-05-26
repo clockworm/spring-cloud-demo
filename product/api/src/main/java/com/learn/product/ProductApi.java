@@ -1,6 +1,5 @@
 package com.learn.product;
 
-
 import java.util.List;
 
 import org.springframework.cloud.openfeign.FeignClient;
@@ -12,7 +11,6 @@ import com.learn.product.dto.ProductInfoDTO;
 import com.learn.product.dto.ResultDTO;
 import com.learn.product.enums.ResultEnum;
 
-
 @FeignClient(name="product")
 public interface ProductApi {
 	
@@ -22,3 +20,5 @@ public interface ProductApi {
 	@PostMapping("decreaseStock")
 	public ResultDTO<ResultEnum> decreaseStock(@RequestBody List<CartDTO> cartDTOS);
 }
+
+
