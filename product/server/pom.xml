@@ -10,13 +10,13 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	
-	<artifactId>server</artifactId>
+	<artifactId>product-server</artifactId>
 	<packaging>war</packaging>
 	
 	<dependencies>
 		<dependency>
 			<groupId>com.learn</groupId>
-			<artifactId>common</artifactId>
+			<artifactId>product-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>

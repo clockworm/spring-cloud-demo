@@ -10,7 +10,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>api</artifactId>
+	<artifactId>product-api</artifactId>
 
 	<dependencies>
 		<dependency>
@@ -19,7 +19,7 @@
 		</dependency>
 		<dependency>
 			<groupId>com.learn</groupId>
-			<artifactId>common</artifactId>
+			<artifactId>product-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
