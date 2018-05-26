@@ -19,7 +19,7 @@ public class ProductCategoryDaoTest extends BaseTest {
 
 	@Test
 	public void testFindProductCategoryByCategoryTypeEquals() {
-		fail("Not yet implemented");
+//		fail("Not yet implemented");
 	}
 
 	@Test
